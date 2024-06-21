@@ -1,0 +1,73 @@
+.marksheet {
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    background-image: url("../../../public//img/mg_logo.jpg");
+    background-repeat: no-repeat ;
+    background-position: center;
+    background-size: contain;
+    background-color: #fff; /* Fallback color */
+  }
+  h1 {
+    
+    color: hsl(205deg 3.95% 35%);
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.95;
+  }
+  .container h1 {
+    color: #d64744;
+    font-weight: 500;
+    font-size: 57px;
+    
+  }
+  .details,
+  .marks,
+  .result {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  /* .details td, */
+  .marks th,
+  .marks td,
+  .result td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  .border1{
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  .marks th {
+    background-color: #f2f2f2;
+  }
+  .print-button {
+    margin-top: 20px;
+  }
+  .signature {
+    text-align: right;
+  }
+  td,
+  th {
+    color: hsl(205deg 3.48% 36.22%);
+  }
+  @media (max-width: 600px) {
+    body {
+      background-size: cover;
+    }
+  }
+  @media print {
+    body {
+      background-image: url("Graduation_logo.jpg") !important;
+      -webkit-print-color-adjust: exact; /* For webkit browsers */
+      print-color-adjust: exact; /* For other browsers */
+    }
+  }
+  strong{
+    color: #3aa0df;
+  }
