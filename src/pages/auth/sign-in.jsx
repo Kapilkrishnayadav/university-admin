@@ -47,7 +47,7 @@ export function SignIn() {
         // navigate( '/dashboard/home' );
       // }, 1000);
       // console.log('Login successful', data);`
-      window.location.href = "https://university-backend-64gg.onrender.com/dashboard/student";
+      window.location.href = "https://university-admin-gray.vercel.app/dashboard/student";
     } catch (error) {
       console.log('Invalid username or password');
     }
