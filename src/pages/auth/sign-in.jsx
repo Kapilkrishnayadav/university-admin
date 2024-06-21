@@ -47,7 +47,7 @@ export function SignIn() {
         // navigate( '/dashboard/home' );
       // }, 1000);
       // console.log('Login successful', data);`
-      window.location.href = "http://localhost:5173/dashboard/student";
+      window.location.href = "https://university-backend-64gg.onrender.com/dashboard/student";
     } catch (error) {
       console.log('Invalid username or password');
     }
