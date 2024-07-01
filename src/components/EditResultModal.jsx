@@ -48,34 +48,17 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
   
   return (
     <div>
-         <div className="Modal_container z-10 flex items-start h-[90vh] mt-20 overflow-y-scroll py-8  fixed top-10 left-[25vw]">
+         <div className="Modal_container z-10 flex items-start h-[90vh]  overflow-y-scroll py-8  fixed top-10 w-[100vw] justify-center ">
           <section className="flex justify-center items-center   p-6 mx-auto bg-gray-700 rounded-md shadow-md">
             <div>
               <p className="border-b-2 w-[18rem] border-[#10b981]  mb-8 text-center  text-xl font-bold text-gray-300 capitalize ">
                 Edit Result 
               </p>
 
-              <div className="flex">
-                <div className="Title__ my-1 mr-8">
-                  <label className="text-lg text-gray-300 " htmlFor="title">
-                    student Id
-                  </label>
-                  <input
-                    value={submitEditData.studentId._id}
-                    onChange={(e) =>
-                      setSubmitEditData(
-                        (prev) => (prev = { ...prev, studentId: e.target.value })
-                      )
-                    }
-                    id="title"
-                    placeholder="Enter Title"
-                    type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
-                    required
-                  />
-                </div>
+              <div className="flex flex-wrap">
+                
 
-                <div className="Title__ my-1 ">
+                <div className="Title__ my-1 mr-8 ">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     Semester
                   </label>
@@ -89,31 +72,11 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
-              </div>
 
-              <div className="flex">
-                <div className="Title__ my-1 mr-8">
-                  <label className="text-lg text-gray-300 " htmlFor="title">
-                    Percentage
-                  </label>
-                  <input
-                  value={submitEditData.percentage}
-                    onChange={(e) =>
-                      setSubmitEditData(
-                        (prev) => (prev = { ...prev, percentage: e.target.value })
-                      )
-                    }
-                    id="title"
-                    placeholder="Enter Title"
-                    type="text"
-                    className="block w-60 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
-                    required
-                  />
-                </div>
 
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
@@ -129,31 +92,36 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-60 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
+              </div>
 
-
-
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
-                    Final result
+                    Percentage
                   </label>
                   <input
-                  value={submitEditData.finalResult}
+                  value={submitEditData.percentage}
                     onChange={(e) =>
                       setSubmitEditData(
-                        (prev) => (prev = { ...prev, finalResult: e.target.value })
+                        (prev) => (prev = { ...prev, percentage: e.target.value })
                       )
                     }
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-60 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
+
+                
+
+
+
 
 
 
@@ -163,7 +131,7 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     
             <div>
 
-<div className="flex">
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     subject code
@@ -183,48 +151,12 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
-
                 
-                <div className="Title__ my-1 ">
-                  <label className="text-lg text-gray-300 " htmlFor="title">
-                    Marks In word
-                  </label>
-                  <div className='flex'> 
 
-                  <input
-                  value={d.marksInWord}
-                    onChange={(e) =>{
-                        
-                        const updatedResult = [...submitEditData.result];
-                        updatedResult[index].marksInWord=e.target.value;
-                        setSubmitEditData(
-                            (prev) => (prev = { ...prev, result: updatedResult })
-                        )
-                        // console.log(submitData.result[index])
-                    }
-                    
-                    }
-                    id="title"
-                    placeholder="Enter Title"
-                    type="text"
-                    className="block w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
-                    required
-                    />
-                  
-                    </div>
-                </div>
-              </div>                    
-
-
-
-
-
-
-                    <div className="flex">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     subject
@@ -244,10 +176,21 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                     />
                 </div>
+                
+                
+              </div>                    
+
+
+
+
+
+
+                <div className="flex flex-wrap">
+                    
 
                 <div className="Title__ my-1  mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
@@ -268,7 +211,7 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-40 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
@@ -295,10 +238,44 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-40 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                     />
-                    {
+                    
+                    </div>
+                </div>
+
+
+              </div>
+
+              <div className='flex flex-wrap'>
+
+              <div className="Title__ my-1 ">
+                  <label className="text-lg text-gray-300 " htmlFor="title">
+                    Marks In word
+                  </label>
+                  <div className='flex'> 
+
+                  <input
+                  value={d.marksInWord}
+                    onChange={(e) =>{
+                        
+                        const updatedResult = [...submitEditData.result];
+                        updatedResult[index].marksInWord=e.target.value;
+                        setSubmitEditData(
+                            (prev) => (prev = { ...prev, result: updatedResult })
+                        )
+                        // console.log(submitData.result[index])
+                    }
+                    
+                    }
+                    id="title"
+                    placeholder="Enter Title"
+                    type="text"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    required
+                    />
+                  {
                        index+1<noOfSubjects?<span 
                        onClick={()=>{
                            setnoOfSubjects(noOfSubjects-1)

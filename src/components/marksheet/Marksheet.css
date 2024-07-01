@@ -5,16 +5,17 @@
     background-position: center;
     background-size: contain;
     background-color: #fff; /* Fallback color */
+    max-width: 687px;
   }
   h1 {
     
     color: hsl(205deg 3.95% 35%);
   }
   .container {
-    max-width: 800px;
+    max-width: 750px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 10px;
     background-color: white;
     opacity: 0.95;

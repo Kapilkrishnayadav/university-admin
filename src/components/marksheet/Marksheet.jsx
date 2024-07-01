@@ -4,12 +4,12 @@ import './Marksheet.css'
 const Marksheet = ({marksheetData}) => {
   // console.log(marksheetData);
   return (
-    <div>
-<div className="marksheet py-3 px-3 mb-28 mx-32">
+    <div className='flex justify-center'>
+<div className="marksheet py-3 px-3 mb-28 mx-32 ">
   <div className="container">
     <div className='flex flex-col  justify-center items-center my-11'>
       <h1>MAHATAMA GANDHI </h1>
-      <div className='text-[1.2rem] text-[#d64744]'>INSTITUTE OF MANAGEMENT SCIENCE AND TECHNOLOGY</div>
+      <div className='text-[1.2rem] font-semibold text-[#d64744]'>INSTITUTE OF MANAGEMENT SCIENCE AND TECHNOLOGY</div>
     </div>
 
     
@@ -31,7 +31,7 @@ const Marksheet = ({marksheetData}) => {
           <td className='border1'><strong>BRANCH:</strong>{marksheetData.studentId.branch}</td>
         </tr>
       </tbody></table>
-    <table className="marks my-20">
+    <table className="marks mt-16 my-16">
       <tbody><tr>
           <th className='text-[#3aa0df]'>SUBJECT CODE</th>
           <th className='text-[#3aa0df]'>SUBJECT</th>
@@ -44,8 +44,8 @@ const Marksheet = ({marksheetData}) => {
         <tr key={index}>
           <td>{d.subjectCode}</td>
           <td>{d.subject}</td>
-          <td>{d.totalMarks}</td>
-          <td>{d.obtainedMarks}</td>
+          <td className='text-center'>{d.totalMarks}</td>
+          <td className='text-center'>{d.obtainedMarks}</td>
           <td>{d.marksInWord}</td>
         </tr>
 
@@ -59,14 +59,14 @@ const Marksheet = ({marksheetData}) => {
           <td><strong>TOTAL MARKS IN WORD:</strong> {marksheetData.totalMarksInWord}</td>
         </tr>
         <tr>
-          <td><strong>PERCENTAGE:</strong> {marksheetData.percentage}</td>
+          <td><strong>PERCENTAGE:</strong> {marksheetData.percentage}%</td>
         </tr>
          <tr>
-          <td><strong>FINAL RESULT:</strong> Pass</td>
+          <td><strong>FINAL RESULT:</strong><span className='text-green-600'>  Pass </span> </td>
           </tr> 
           
       </tbody></table>
-    <p className="signature text-[#3aa0df]">SIGNATURE OF THE PRINCIPAL</p>
+    <p className="signature text-[#3aa0df] mt-16">SIGNATURE OF THE PRINCIPAL</p>
   </div>
   <div className="print-button">
     {/* <button onClick={window.print()}>Print</button> */}

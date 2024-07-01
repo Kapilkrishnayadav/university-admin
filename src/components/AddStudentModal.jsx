@@ -4,14 +4,14 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
   
   return (
     <div>
-         <div className="Modal_container flex items-center h-[46vh]  py-8  fixed top-10 left-[25vw]">
-          <section className="flex justify-center items-center mt-72  p-6 mx-auto bg-gray-700 rounded-md shadow-md">
+         <div className="Modal_container flex items-start h-[90vh]  py-8  fixed top-10 w-[100vw] justify-center overflow-y-scroll">
+          <section className="flex justify-center items-center p-6 mx-auto bg-gray-700 rounded-md shadow-md">
             <div>
               <p className="border-b-2 w-[18rem] border-[#10b981]  mb-8 text-center  text-xl font-bold text-gray-300 capitalize ">
                 Add Student 
               </p>
-
-              <div className="flex">
+          
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     Name*
@@ -25,7 +25,7 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
@@ -42,14 +42,14 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     }
                     id="title"
                     placeholder="Enter Title"
-                    type="string"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    type="date"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
               </div>
 
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     Father Name
@@ -63,7 +63,7 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
@@ -81,13 +81,13 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
               </div>
 
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                     Class
@@ -101,7 +101,7 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
@@ -120,13 +120,13 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>
               </div>
 
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <div className="Title__ my-1 mr-8">
                   <label className="text-lg text-gray-300 " htmlFor="title">
                   Branch
@@ -140,7 +140,7 @@ const AddStudentModal = ({setAddStudentModalForm,handleSubmit,setSubmitData}) =>
                     id="title"
                     placeholder="Enter Title"
                     type="text"
-                    className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
+                    className="block max-w-72 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
                 </div>

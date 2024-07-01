@@ -77,7 +77,7 @@ export function Student() {
          const jsonData = await response.json();
          setRecords(jsonData);
          setFilterRecords(jsonData);
-         console.log(jsonData)
+        //  console.log(jsonData)
        } catch (error) {
          console.log(error.message);
        }
@@ -210,12 +210,38 @@ export function Student() {
       }
    })
 
-   const handleFilter=((e)=>{
-    const newData=filterRecords.filter((row)=>row[filterBy].toLowerCase().includes(event.target.value.toLowerCase())) 
-    setRecords(newData)
-  })
+  //  const handleFilter=((e)=>{
+  //   const newData=filterRecords.filter((row)=>row[filterBy].toLowerCase().includes(event.target.value.toLowerCase())) 
+  //   setRecords(newData)
+  // })
 
-  
+  // const handleFilter = ((e) => {
+  //   const newData = filterRecords.filter((row) => {
+  //     let value = row[filterBy];
+  //     if (typeof value === 'number') {
+  //       value = value.toString();
+  //     }
+  //     return value.toLowerCase().includes(e.target.value.toLowerCase());
+  //   });
+  //   setRecords(newData);
+  // });
+
+  const handleFilter = ((e) => {
+    const searchValue = e.target.value.toLowerCase();
+    const newData = filterRecords.filter((row) => {
+        let value = row[filterBy];
+        if (typeof value === 'number') {
+            value = value.toString();
+        } else if (typeof value === 'string') {
+            value = value.toLowerCase();
+        }
+        return value.includes(searchValue);
+    });
+    setRecords(newData);
+});
+
+
+
    const column=[
      {
        name:"Edit",
@@ -295,31 +321,36 @@ export function Student() {
     <>
     <div className="mt-12 mb-8 flex flex-col " >
 
-    <div className="flex justify-between mb-2 ">
+    <div className="flex sm:flex-row flex-col justify-between mb-2 ">
+        <div>
+
         <button
         onClick={setAddStudentModalForm}
         className="py-2 rounded-xl bg-[#0000ff] text-white px-3 border-2 border-solid border-gray-300">Add Student</button>
         <button
         onClick={handleDelete}
-         className="py-2 rounded-xl bg-[#0000ff] text-white px-3 border-2 border-solid border-gray-300">Delete Student</button>
+        className="py-2 rounded-xl bg-[#0000ff] text-white px-3 border-2 border-solid border-gray-300">Delete Student</button>
        
-       <select className="block w-40 px-4 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-md   focus:outline-none focus:ring" id="gender" name="gender"
+        </div>
+        <div>
+
+       <select className="block w-40 px-4 py-2 my-2 text-gray-800 bg-white border border-gray-300 rounded-md   focus:outline-none focus:ring" id="gender" name="gender"
                   onChange={(e) =>
                     setFilterBy( e.target.value )
                   }
                   >
-                      {/* <option value=""  disabled selected hidden>Search on</option> */}
-                      <option value="vendorId">Vendor Id</option>
-                      <option value="firstName">First Name</option>
-                      <option value="lastName">Last Name</option>
-                      <option value="dateOfBirth">DOB</option>
-                      <option value="email">email</option>
-                      <option value="phoneNo">phone no</option>
-                      <option value="gender">gender</option>
-                      <option value="password">password</option>
-                    </select>
+                      <option value=""  disabled selected hidden>Search on</option>
+                      <option value="name">Name</option>
+                      <option value="rollNo">Roll NO</option>
+                      <option value="fatherName">Father Name</option>
+                      <option value="batch">Batch</option>
+                      <option value="class_">Class</option>
+                    
+                      
+        </select>
 
         <input onChange={handleFilter} className="py-2 px-3 border-2 border-solid border-gray-300" type="text" placeholder="search..." />
+          </div>
       </div>
       <DataTable columns={column} data={records}
       customStyles={customStyles}

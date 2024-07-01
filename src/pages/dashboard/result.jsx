@@ -3,14 +3,27 @@ import { useState,useEffect } from 'react';
 import AddResultModal from '@/components/AddResultModal'
 import EditResultModal from '@/components/EditResultModal';
 import Marksheet from '@/components/marksheet/Marksheet'
+
 import PrintComponent from '@/components/PrintComponent';
 export function Result() {
     const [addResultModalForm, setAddResultModalForm] = useState(false)
     const [editResultModalForm, setEditResultModalForm] = useState(false)
     const [editIndex, setEditIndex] = useState(-1)
+
+    const getId=()=>{
+      const url = window.location.pathname; // Get the path
+
+  // Split the path into an array using '/' as the delimiter
+        const urlParts = url.split('/');
+
+  // Assuming the ID is the last segment, access it using urlParts.length - 1
+        const id = urlParts[urlParts.length - 1];
+        return id;
+    }
+    let x=getId();
     const [submitData, setSubmitData] = useState({
         
-        studentId:"",
+        studentId:x,
         semester: "",
         percentage:null,
         totalMarksInWord:"",
@@ -34,15 +47,16 @@ export function Result() {
             const [marksheetData, setMarksheetData] = useState([])
  useEffect(() => {
     const fetchData = async () => {
-         
-        const url = window.location.pathname; // Get the path
+         console.log(submitData)
+  //       const url = window.location.pathname; // Get the path
 
-  // Split the path into an array using '/' as the delimiter
-        const urlParts = url.split('/');
+  // // Split the path into an array using '/' as the delimiter
+  //       const urlParts = url.split('/');
 
-  // Assuming the ID is the last segment, access it using urlParts.length - 1
-        const id = urlParts[urlParts.length - 1];
-        // console.log(id);
+  // // Assuming the ID is the last segment, access it using urlParts.length - 1
+  //       const id = urlParts[urlParts.length - 1];
+  const id = getId();
+        
       try {
         const response = await fetch(
          `${import.meta.env.VITE_BACKEND_URL}/api/result?studentId=${id}`
@@ -72,7 +86,7 @@ export function Result() {
     console.log(submitData);
     const {studentId,semester,percentage,totalMarksInWord,finalResult,result} =submitData;
     // console.log(submitData)
-    if(!studentId || !semester || !percentage || !totalMarksInWord || !finalResult|| !result)
+    if(!studentId || !semester || !percentage || !totalMarksInWord || !result)
     {
       alert("Fill all the fields");
       return;
@@ -109,46 +123,46 @@ export function Result() {
   };
   
 
-  const handleSubmitEdit = async(e) => {
-    e.preventDefault();
-    console.log(submitEditData);
-    const {studentId,semester,percentage,grade,finalResult,result} =submitData;
-    // console.log(submitData)
-    if(!studentId || !semester || !percentage || !grade || !finalResult)
-    {
-      alert("Fill all the fields");
-      return;
-    }
-      return
-    try {
-      // Make POST request to backend API
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/result`, {
-        method: "POST",
-        headers: {
+  // const handleSubmitEdit = async(e) => {
+  //   e.preventDefault();
+  //   console.log(submitEditData);
+  //   const {studentId,semester,percentage,grade,finalResult,result} =submitData;
+  //   // console.log(submitData)
+  //   if(!studentId || !semester || !percentage || !grade || !finalResult)
+  //   {
+  //     alert("Fill all the fields");
+  //     return;
+  //   }
+  //     return
+  //   try {
+  //     // Make POST request to backend API
+  //     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/result`, {
+  //       method: "POST",
+  //       headers: {
           
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(submitData),
-      });
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(submitData),
+  //     });
 
-      // Check if request was successful
-      if (response.ok) {
-        const data = await response.json();
-        console.log("result entry created successfully:", data);
-        setAddResultModalForm(false);
-        // Handle success, e.g., show success message
-        window.location.reload()
-      } else {
-        // Handle error, e.g., show error message
-        const data = await response.json();
-        alert(data.error);
-        console.error("Failed to create result", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error creating result", error);
-      // Handle error, e.g., show error message
-    }
-  };
+  //     // Check if request was successful
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       console.log("result entry created successfully:", data);
+  //       setAddResultModalForm(false);
+  //       // Handle success, e.g., show success message
+  //       window.location.reload()
+  //     } else {
+  //       // Handle error, e.g., show error message
+  //       const data = await response.json();
+  //       alert(data.error);
+  //       console.error("Failed to create result", response.statusText);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error creating result", error);
+  //     // Handle error, e.g., show error message
+  //   }
+  // };
   const  handleDelete=(async(id)=>{
     console.log(id);
     try {
@@ -171,10 +185,17 @@ export function Result() {
 
 
 
+
+
   
      
   return (
     <div>
+    
+       {/* <input onChange={async(e)=>{
+         const file=e.target.value;
+
+       }} type="file" id="fileInput" name="excelFile" accept=".xlsx, .xls"></input> */}
       {/* <PrintComponent/> */}
          <button
         onClick={()=>setAddResultModalForm(true)}
@@ -186,7 +207,7 @@ export function Result() {
         }
 
         {
-            editResultModalForm?<EditResultModal setEditResultModalForm={setEditResultModalForm} handleSubmitEdit={handleSubmitEdit}  marksheetData={marksheetData[editIndex]}/>:null
+            editResultModalForm?<EditResultModal setEditResultModalForm={setEditResultModalForm}   marksheetData={marksheetData[editIndex]}/>:null
         }
 
         {

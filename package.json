@@ -21,7 +21,8 @@
     "react-router-dom": "6.17.0",
     "react-to-print": "^2.15.1",
     "socket.io-client": "^4.7.5",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/react": "18.2.31",
