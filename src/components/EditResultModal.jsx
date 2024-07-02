@@ -9,7 +9,7 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
     // console.log(submitEditData);
     const {studentId,semester,percentage,totalMarksInWord,finalResult,result} =submitEditData;
     console.log(submitEditData)
-    if(!studentId || !semester || !percentage || !totalMarksInWord || !finalResult || !result)
+    if(!semester || !percentage || !totalMarksInWord  || !result)
     {
       alert("Fill all the fields");
       return;

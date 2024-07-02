@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 const EditStudentModal = ({setEditStudentModalForm,handleSubmitEdit,setSubmitEditData,submitEditData}) => {
   
   console.log(submitEditData)
+
   return (
     <div>
          <div className="Modal_container flex items-center h-[100vh] py-8  fixed top-0 left-[25vw]">
@@ -45,7 +46,7 @@ const EditStudentModal = ({setEditStudentModalForm,handleSubmitEdit,setSubmitEdi
                     }
                     id="title"
                     placeholder="Enter Title"
-                    type="text"
+                    type="date"
                     className="block w-96 px-4 py-2 mt-2 text-gray-800 bg-white border border-[#10b981] rounded-md   focus:outline-none focus:ring"
                     required
                   />
