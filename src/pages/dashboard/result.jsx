@@ -59,7 +59,7 @@ export function Result() {
         
       try {
         const response = await fetch(
-         `${import.meta.env.VITE_BACKEND_URL}/api/result?studentId=${id}`
+         `${import.meta.env.VITE_BACKEND_URL}/result?studentId=${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -94,7 +94,7 @@ export function Result() {
       // return
     try {
       // Make POST request to backend API
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/result`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/result`, {
         method: "POST",
         headers: {
           
@@ -166,7 +166,7 @@ export function Result() {
   const  handleDelete=(async(id)=>{
     console.log(id);
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/result`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/result`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

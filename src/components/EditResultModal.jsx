@@ -17,7 +17,7 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
     //   return
     try {
       // Make POST request to backend API
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/result`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/result`, {
         method: "PUT",
         headers: {
           

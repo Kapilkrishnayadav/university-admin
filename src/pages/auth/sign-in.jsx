@@ -26,7 +26,7 @@ export function SignIn() {
     try {
       // console.log(username);
       // console.log(password);
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login-admin`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login-admin`, {
         
         method: 'POST',
         headers: {
