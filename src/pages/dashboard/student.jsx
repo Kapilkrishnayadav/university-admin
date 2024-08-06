@@ -75,6 +75,8 @@ export function Student() {
            throw new Error("Failed to fetch data");
          }
          const jsonData = await response.json();
+         jsonData.reverse();
+         console.log(jsonData);
          setRecords(jsonData);
          setFilterRecords(jsonData);
         //  console.log(jsonData)
