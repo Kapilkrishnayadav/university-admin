@@ -86,7 +86,7 @@ const EditResultModal = ({setEditResultModalForm,marksheetData}) => {
                   value={submitEditData.totalMarksInWord}
                     onChange={(e) =>
                       setSubmitEditData(
-                        (prev) => (prev = { ...prev, grade: e.target.value })
+                        (prev) => (prev = { ...prev, totalMarksInWord: e.target.value })
                       )
                     }
                     id="title"
